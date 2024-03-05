@@ -3,9 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
 
+import { ListeTasksComponent } from './liste-tasks/liste-tasks.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  
+    ListeTasksComponent
+  ],
   imports: [
     CommonModule,
     TasksRoutingModule
