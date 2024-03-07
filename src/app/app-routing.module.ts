@@ -11,7 +11,8 @@ const routes: Routes = [
     {path:'projects',loadChildren:()=>import('./views/admin/projects/projects.module').then(m => m.ProjectsModule)},
     {path:'leaveadmin',loadChildren:()=>import('./views/admin/leave-admin/leave-admin.module').then(m => m.LeaveAdminModule)},
     {path:'holidays',loadChildren:()=>import('./views/admin/holidays/holidays.module').then(m => m.HolidaysModule)},
-  ]
+    {path:'departements',loadChildren:()=>import('./views/admin/departements/departements.module').then(m => m.DepartementsModule)},
+    {path:'entreprises',loadChildren:()=>import('./views/admin/entreprise/entreprise.module').then(m => m.EntrepriseModule)}]
 },
 {path:'',component:FrontComponent,children:[
   {path:'',loadChildren:()=>import('./views/front/home/home.module').then(m=>m.HomeModule)}

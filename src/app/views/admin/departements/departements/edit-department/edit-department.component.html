@@ -1,0 +1,59 @@
+<p>edit-department works!</p>
+<div id="edit_Department" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Departement</h5>
+                <button type="button" class="close" data-dismiss="modal" [routerLink]="['/admin/departements']"  aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"   >
+                <form  [formGroup]="myForm" (ngSubmit)="updateD()" >
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-form-label">Name <span class="text-danger">*</span></label>
+                                <input formControlName="name" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="col-form-label">Department ID <span class="text-danger">*</span></label>
+                                <input formControlName="_id" class="form-control" type="text" required>
+                            </div>
+                        </div>
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                              <label class="col-form-label">Budget Allocated</label>
+                              <input class="form-control" type="number" formControlName="budgetAllocated" >
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                              <label class="col-form-label">Total Employees</label>
+                              <input class="form-control" type="number" formControlName="totalEmployees" >
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                              <label class="col-form-label">Description</label>
+                              <input class="form-control" type="text"formControlName="description" >
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="form-group">
+                              <label class="col-form-label">Vacant Positions</label>
+                              <input class="form-control" type="number" formControlName="vacantPositions" >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="submit-section">
+                            <button class="btn btn-primary submit-btn"  type="submit"     [disabled]="myForm.invalid">Save</button>
+                        </div>
+                      </form>
+            </div>
+        </div>
+    </div>
+</div>
