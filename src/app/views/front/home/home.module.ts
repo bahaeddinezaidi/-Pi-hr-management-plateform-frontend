@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,RouterModule
+    HomeRoutingModule,RouterModule,FormsModule
   ]
 })
 export class HomeModule { }

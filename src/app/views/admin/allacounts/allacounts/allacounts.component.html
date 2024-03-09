@@ -1,0 +1,61 @@
+<div class="page-wrapper">
+    <!-- Page Content -->
+    <div class="content container-fluid">
+        <!-- Table des utilisateurs -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table datatable">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>IsActive</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users$ | async">
+                                <td>
+                                    <h2 class="table-avatar">
+                                        <a href="client-profile.html" class="avatar"><img src="assets/img/profiles/avatar-19.jpg" alt=""></a>
+                                        <a href="client-profile.html">{{ user.name }}</a>
+                                    </h2>
+                                </td>
+                                <td>{{ user._id}}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.role }}</td>
+                                <td>
+                                    <div class="dropdown action-label">
+                                        <a href="#" class="btn btn-white btn-sm btn-rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-dot-circle-o {{ user.isActive ? 'text-success' : 'text-danger' }}"></i>
+                                            {{ user.isActive ? 'Active' : 'Inactive' }}
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <!-- Boutons pour activer ou désactiver l'utilisateur -->
+                                            <a class="dropdown-item" (click)="activateUser(user._id)" *ngIf="!user.isActive">Activate</a>
+                                            <a class="dropdown-item" (click)="deactivateUser(user._id)" *ngIf="user.isActive">Deactivate</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="dropdown dropdown-action">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_client"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_client"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
